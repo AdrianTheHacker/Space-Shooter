@@ -1,12 +1,20 @@
 from Entities.GameObjects import GameObject
+from Entities.Enemy import Enemy
+from Entities.LootEnemy import LootEnemy
+
 from Settings import *
 
 
 class Player(GameObject):
-    def __init__(self, surface, colour, width, height, position):
+    def __init__(self, surface, colour, width, height, position, maxAmmo):
         super().__init__(surface, colour, width, height, position)
+
+        self.maxAmmo = maxAmmo
+
+        self.ammo = self.maxAmmo
         self.direction = 'U'
-        self.ammo = 15
+        self.score = 0
+
         self.bulletGroup = pygame.sprite.Group()
 
     def move(self):
@@ -51,14 +59,33 @@ class Player(GameObject):
                 if bullet rect collides with enemy rect:
                     enemy blows up and you can shoot again
             """
-            for enemy in enemyGroup.sprites():
-                if self.rect.colliderect(enemy.rect):
+            global score
+            for entity in enemyGroup.sprites():
+                if self.rect.colliderect(entity.rect):
                     print("Bullet hit Enemy")
-                    enemy.kill()
+
+                    score += 1
+
+                    entity.onShot()
+                    entity.kill()
+
+                    if type(entity) is Enemy:
+                        enemy = Enemy(self.surface,
+                                      red,
+                                      tileSize, tileSize,
+                                      (WIDTH + tileSize * 2, getRandY()), 2)
+                        enemyGroup.add(enemy)
+
+                    elif type(entity) is LootEnemy:
+                        lootEnemy = LootEnemy(self.surface,
+                                              green,
+                                              tileSize, tileSize,
+                                              (WIDTH + tileSize * 2, getRandY()), 2)
+                        enemyGroup.add(lootEnemy)
+
                     self.kill()
 
         def update(self):
             self.draw()
             self.move()
             self.checkCollision()
-

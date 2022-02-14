@@ -1,23 +1,22 @@
 import pygame
 
-from Level_Creator.Level import level
+import Settings
+from Level_Creator.Level import Level
 from Settings import screen, black
 
 pygame.init()
 
-ded = False
+testLevel = Level(screen, 2, 4)
 
 
 def main():
-    global ded
-
-    while not ded:
+    while not Settings.ded:
         for i in pygame.event.get():
             if i.type == pygame.QUIT:
-                ded = True
+                Settings.ded = True
 
         screen.fill(black)
-        level.run()
+        testLevel.run()
 
         pygame.time.Clock().tick(10)
         pygame.display.flip()

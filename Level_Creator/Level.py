@@ -1,38 +1,51 @@
-from Level_Creator.GameMaps import testLevel
-from Settings import *
-from Entities.Enemy import Enemy
 from Entities.Player import Player
+from Entities.LootEnemy import LootEnemy
+from Entities.Enemy import Enemy
 
-# Credits: https://www.youtube.com/watch?v=YWN8GcmJ-jA
-from Settings import screen, enemyGroup, HEIGHT, tileSize
+from Settings import *
+
+import pygame
+
+from Settings import score
 
 
 class Level:
-    def __init__(self, levelData, surface):
+    def __init__(self, surface, spawnRate, numOfEnemies):
         self.surface = surface
-        self.levelSetup(levelData)
+        self.spawnRate = spawnRate
+        self.numOfEnemies = numOfEnemies
 
-    def levelSetup(self, layout):
-        for rowIndex, row in enumerate(layout):
-            for cellIndex, cell in enumerate(row):
-                x = cellIndex * tileSize
-                y = rowIndex * tileSize
+        self.enemyGroup = pygame.sprite.Group()
 
-                if cell == 'E':
-                    enemy = Enemy(screen, red, tileSize, tileSize, (x, y))
-                    enemyGroup.add(enemy)
+        self.drawLevel()
 
-                if cell == 'P':
-                    player = Player(screen, lightBlue, tileSize, tileSize, (x, y))
-                    playerSingle.add(player)
+    def drawLevel(self):
+        """
+        create and add the player
+        adds a new powerup for the number of spawn rate
 
+        for every powerup added, add 5 enemies
+        """
+        for entity in range(self.spawnRate):
+            for enemies in range(self.numOfEnemies):
+                enemy = Enemy(self.surface,
+                              red,
+                              tileSize, tileSize,
+                              (WIDTH - tileSize, getRandY()), score * 2)
+                enemyGroup.add(enemy)
 
+            enemy = LootEnemy(self.surface,
+                              green,
+                              tileSize, tileSize,
+                              (WIDTH - tileSize, getRandY()), score * 2)
+            enemyGroup.add(enemy)
+
+        player = Player(self.surface,
+                        lightBlue,
+                        tileSize, tileSize,
+                        (0, tileSize * 2), 5)
+        playerSingle.add(player)
 
     def run(self):
-        enemyGroup.update()
         playerSingle.update()
-
-
-level = Level(testLevel, screen)
-
-
+        enemyGroup.update()
