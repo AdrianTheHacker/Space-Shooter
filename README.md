@@ -1,6 +1,7 @@
 # Space Shooter
-Created: February 13, 2022
+Created: February 13, 2022 <br />
 Completed: N/A
+
 
 Last Edited: February 13, 2022
 
