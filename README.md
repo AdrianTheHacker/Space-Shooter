@@ -86,13 +86,13 @@ To implement these features I will use the pygame library. Pygame has many featu
 - Collisions
     - Collisions between the Bullet and the Enemy
     - Collisions between the Bullet and the Power-up
-### User interaction
-- Start button on title screen
-- During game, clicking the space bar will shoot a bullet
-- Rerun button on end screen
+- User interaction
+    - Start button on title screen
+    - During game, clicking the space bar will shoot a bullet
+    - Rerun button on end screen
 
 ## Version Guide
 During game development, this portion of the file will be updated frequently
 
 Version 1.0:
-    - All of priority 1 and priority 2 were added
+        - All of priority 1 and priority 2 were added
