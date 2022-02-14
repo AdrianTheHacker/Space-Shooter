@@ -2,11 +2,11 @@ from Entities.Player import Player
 from Entities.LootEnemy import LootEnemy
 from Entities.Enemy import Enemy
 
-from Settings import *
+from main.Settings import *
 
 import pygame
 
-from Settings import score
+from main.Settings import score
 
 
 class Level:

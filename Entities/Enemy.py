@@ -1,5 +1,5 @@
 from Entities.GameObjects import GameObject
-import Settings
+from main import Settings
 
 
 class Enemy(GameObject):

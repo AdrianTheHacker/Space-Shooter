@@ -1,5 +1,5 @@
 from Entities.Enemy import Enemy
-from Settings import playerSingle
+from main.Settings import playerSingle
 
 
 class LootEnemy(Enemy):

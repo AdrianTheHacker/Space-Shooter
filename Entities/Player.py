@@ -2,7 +2,7 @@ from Entities.GameObjects import GameObject
 from Entities.Enemy import Enemy
 from Entities.LootEnemy import LootEnemy
 
-from Settings import *
+from main.Settings import *
 
 
 class Player(GameObject):
