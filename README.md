@@ -94,5 +94,5 @@ To implement these features I will use the pygame library. Pygame has many featu
 ## Version Guide
 During game development, this portion of the file will be updated frequently
 
-Version 1.0:
+### Version 1.0:
         - All of priority 1 and priority 2 were added
