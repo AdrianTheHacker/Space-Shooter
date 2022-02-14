@@ -6,7 +6,7 @@ class Player(GameObject):
     def __init__(self, surface, colour, width, height, position):
         super().__init__(surface, colour, width, height, position)
         self.direction = 'U'
-        self.ammo = 20
+        self.ammo = 15
         self.bulletGroup = pygame.sprite.Group()
 
     def move(self):
