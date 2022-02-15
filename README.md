@@ -40,7 +40,7 @@ The environment I will code in will be PyCharm. PyCharm is a powerful Python IDE
     - Creating a basic rectangle to represent the Bullet (Priority 2)
     - Adding the Bullet Movement (Priority 2)
     - Adding the Bullet Collision with Enemy (Priority 2)
-    - Adding the Bullet Collision with Ammo-refill power-up (Priority 
+    - Adding the Bullet Collision with Ammo-refill power-up (Priority 3)
 3. Creating the Enemy
     - Creating a basic rectangle to represent the Enemy (Priority 1)
     - Adding Enemy movement patterns (Priority 3)
@@ -61,6 +61,8 @@ The environment I will code in will be PyCharm. PyCharm is a powerful Python IDE
 3. Creating images (Priority 5)
     - Adding background image
     - Adding Player, Bullet, Enemy and Powerup image
+4. Creating a score and ammo display (Priority 4)
+5. Replacing ammo display with a bar that lowers as bullets are shot (Priority 5)
 
 ## Implementation
 To implement these features I will use the pygame library. Pygame has many features to make designing games easy. Some of these features include:
@@ -95,4 +97,7 @@ To implement these features I will use the pygame library. Pygame has many featu
 During game development, this portion of the file will be updated frequently
 
 ### Version 1.0:
-        - All of priority 1 and priority 2 were added
+1) All of priority 1 and priority 2 were added
+
+### Version 1.5:
+1) All of priority 3 were added
