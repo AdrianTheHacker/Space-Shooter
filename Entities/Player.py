@@ -13,7 +13,6 @@ class Player(GameObject):
 
         self.ammo = self.maxAmmo
         self.direction = 'U'
-        self.score = 0
 
         self.bulletGroup = pygame.sprite.Group()
 

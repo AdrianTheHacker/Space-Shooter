@@ -1,22 +1,23 @@
-import pygame
-
-import Settings
 from Level_Creator.Level import Level
-from Settings import screen, black
+from main import Settings
 
+import pygame
 pygame.init()
 
-testLevel = Level(screen, 2, 4)
+testLevel = Level(Settings.screen, 2, 4)
 
 
 def main():
     while not Settings.ded:
-        for i in pygame.event.get():
-            if i.type == pygame.QUIT:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
                 Settings.ded = True
 
-        screen.fill(black)
+        Settings.screen.fill(Settings.black)
         testLevel.run()
+
+        print(Settings.ded)
+        print(Settings.score)
 
         pygame.time.Clock().tick(10)
         pygame.display.flip()
@@ -24,3 +25,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    pygame.quit()

@@ -6,8 +6,6 @@ from main.Settings import *
 
 import pygame
 
-from main.Settings import score
-
 
 class Level:
     def __init__(self, surface, spawnRate, numOfEnemies):
@@ -31,13 +29,13 @@ class Level:
                 enemy = Enemy(self.surface,
                               red,
                               tileSize, tileSize,
-                              (WIDTH - tileSize, getRandY()), score * 2)
+                              (WIDTH - tileSize, getRandY()), 5)
                 enemyGroup.add(enemy)
 
             enemy = LootEnemy(self.surface,
                               green,
                               tileSize, tileSize,
-                              (WIDTH - tileSize, getRandY()), score * 2)
+                              (WIDTH - tileSize, getRandY()), 5)
             enemyGroup.add(enemy)
 
         player = Player(self.surface,

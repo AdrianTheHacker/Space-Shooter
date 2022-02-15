@@ -14,10 +14,8 @@ class Enemy(GameObject):
     def onShot(self):
         Settings.score += 1
 
-        print(Settings.score)
-
     def checkCollision(self):
-        if self.rect.x <= 0:
+        if self.rect.x < 0:
             Settings.ded = True
 
     def update(self):
