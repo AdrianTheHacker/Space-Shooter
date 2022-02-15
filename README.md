@@ -15,7 +15,7 @@ The environment I will code in will be PyCharm. PyCharm is a powerful Python IDE
 
 ## Sketch of Project:
 ![Untitled drawing (2)](https://user-images.githubusercontent.com/57376726/153796915-0652dbdb-92c9-4f40-8f6a-ad3eb223ae23.png)
-[README.md](https://github.com/Gravitysause/Space-Shooter/files/8073922/README.md)
+![GameScenes](https://user-images.githubusercontent.com/57376726/154132312-8b90bb6a-b5c0-4192-b398-e87373ff0144.jpg)
 
 ## Prioritized Features List:
 ### Creating the Game Windows
