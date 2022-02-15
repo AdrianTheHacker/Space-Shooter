@@ -101,3 +101,6 @@ During game development, this portion of the file will be updated frequently
 
 ### Version 1.5:
 1) All of priority 3 were added
+
+### Version 2:
+1) All of priority 4 and 5 were added
