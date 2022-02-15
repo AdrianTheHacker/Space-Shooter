@@ -5,6 +5,7 @@ window = WIDTH, HEIGHT = 600, 600
 screen = pygame.display.set_mode(window)
 tileSize = 50
 
+fps = 10
 score = 1
 ded = False
 

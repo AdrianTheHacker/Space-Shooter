@@ -19,7 +19,7 @@ def main():
         print(Settings.ded)
         print(Settings.score)
 
-        pygame.time.Clock().tick(10)
+        pygame.time.Clock().tick(Settings.fps)
         pygame.display.flip()
 
 
